@@ -2,10 +2,12 @@
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage[british]{babel}
 
 % other packages
 \usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
 \usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{tikz}
 
 \author{Name}
 \title{UNNC Beamer Theme}
@@ -33,17 +35,26 @@
     frame=shadowbox,
 }
 
+% --- Title page logo position ---
+\newcommand{\TitlePageLogo}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[
+            anchor=north west,
+            xshift=0.1cm,
+            yshift=-0.7cm,
+            inner sep=0pt
+        ] at (current page.north west) {
+            \includegraphics[height=1cm,keepaspectratio]{pic/BrandEvolution-NottinghamBlue.eps}
+        };
+    \end{tikzpicture}
+}
 
 \begin{document}
 
 
 \begin{frame}
+    \TitlePageLogo
     \titlepage
-    \begin{figure}[htpb]
-        \begin{center}
-            \includegraphics[width=0.4\linewidth]{pic/BrandEvolution-NottinghamBlue.eps}
-        \end{center}
-    \end{figure}
 \end{frame}
 
 \begin{frame}
